@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-product-list',
@@ -9,8 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PokemonProductListComponent implements OnInit{
   products: any[] = [];
 
-  constructor(private route: ActivatedRoute){
-
+  constructor(){
   }
 
   ngOnInit(): void {
@@ -18,7 +16,5 @@ export class PokemonProductListComponent implements OnInit{
     if(storedProducts) {
       this.products = JSON.parse(storedProducts)
     }
-
-    console.log(this.products)
   }
 }

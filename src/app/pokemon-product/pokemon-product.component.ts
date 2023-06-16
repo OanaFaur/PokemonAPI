@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { AbstractControl, FormBuilder, ValidatorFn, Validators } from '@angular/forms';
+import { PokemonProductService } from '../services/pokemon-product.service';
 
 @Component({
   selector: 'app-pokemon-product',
@@ -12,7 +13,8 @@ export class PokemonProductComponent implements OnInit {
   categories: string[] = ['Electronics', 'Cloths', 'Blanket'];
   phoneTypes: string[] = ['Mobile', 'Landline'];
 
-  constructor(private formBuilder: FormBuilder) { }
+  
+  constructor(private formBuilder: FormBuilder, private productService:PokemonProductService) { }
   ngOnInit(): void {
     this.pokemonProduct = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9 -]+$')]],
@@ -59,5 +61,7 @@ export class PokemonProductComponent implements OnInit {
 
     this.pokemonProduct.reset();
     this.temporaryPokemonProduct = [];
+
+    this.productService.notifyWhenProductAdded()
   }
 }

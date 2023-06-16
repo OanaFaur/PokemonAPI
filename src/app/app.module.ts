@@ -21,6 +21,7 @@ import { UserService } from './services/user.service';
 import { PokemonProductComponent } from './pokemon-product/pokemon-product.component';
 import { PokemonProductListComponent } from './pokemon-product-list/pokemon-product-list.component';
 import { PokemonStatisticsComponent } from './pokemon-statistics/pokemon-statistics.component';
+import { PokemonProductService } from './services/pokemon-product.service';
 
 @NgModule({
   declarations: [
@@ -47,9 +48,8 @@ import { PokemonStatisticsComponent } from './pokemon-statistics/pokemon-statist
   [PokemonService, 
     SearchService, 
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    UserService
-    
-
+    UserService,
+    PokemonProductService
   ],
   bootstrap: [AppComponent],
   exports: [AppRoutingModule]

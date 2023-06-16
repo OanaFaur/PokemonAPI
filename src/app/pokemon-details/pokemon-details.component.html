@@ -1,54 +1,46 @@
+<div class="background">
+  <h1 [class]="'bg-' + pokemon!.types[0]?.type.name">{{ pokemon.name }}</h1>
+</div>
+<div class="types-container">
+  <h4
+    *ngFor="let type of pokemon?.types"
+    [class]="'poketype bg-' + type.type.name"
+  >
+    {{ type.type.name }}
+  </h4>
+</div>
 
-  <div class="background">
-  <h1 [class] = "'bg-' + pokemon!.types[0]?.type.name">{{ pokemon.name }}</h1>
-  
-  </div>
-  <div class="types-container">
-    <h4 *ngFor="let type of pokemon?.types" [class]="'poketype bg-' + type.type.name">{{type.type.name}}</h4>
-  </div>
+<app-pokemon-statistics [pokemon]="pokemon"> </app-pokemon-statistics>
 
- <app-pokemon-statistics
-  [pokemon] = "pokemon">
- </app-pokemon-statistics>
+<div class="PokeSpecies">
+  <h6>{{ pokemonEnglishShortDescription?.genus }}</h6>
+  <p>{{ pokemonEnglishLongDescription?.flavor_text }}</p>
+</div>
 
-  <div class="PokeSpecies">
-    <h6>{{pokemonEnglishShortDescription?.genus}}</h6>
-    <p>{{pokemonEnglishLongDescription?.flavor_text}}</p>
-  </div>
+<div class="Profile">
+  <h1 [class]="'bg-' + pokemon!.types[0]?.type?.name">Profile</h1>
+</div>
 
-  <div class="Profile">
-    <h1 [class] = "'bg-' + pokemon!.types[0]?.type?.name">Profile </h1>
-  </div>
-  
-
-  <app-pokemon-profile 
-  [pokemonProfile]="pokemon" 
-  [pokemonSpeciesProfile] = "pokemonSpecies"
+<app-pokemon-profile
+  [pokemonProfile]="pokemon"
+  [pokemonSpeciesProfile]="pokemonSpecies"
   [genderRatio]="genderRatio"
   [effortValues]="efforts"
-  >
-  
-  </app-pokemon-profile>
+>
+</app-pokemon-profile>
 
-  <div class="Evolution">
-    <h1 [class] = "'bg-' + pokemon!.types[0]?.type?.name">Evolution </h1>
- </div>
+<div class="Evolution">
+  <h1 [class]="'bg-' + pokemon!.types[0]?.type?.name">Evolution</h1>
+</div>
 
- <app-pokemon-evolution
- [pokemon] = "pokemon"
- [pokemonNextInChain] ="pokemonNextInChain">
+<app-pokemon-evolution
+  [pokemon]="pokemon"
+  [pokemonNextInChain]="pokemonNextInChain"
+>
+</app-pokemon-evolution>
 
- </app-pokemon-evolution>
-
-  <div class="Damages">
-    <h1 [class] = "'bg-' + pokemon!.types[0]?.type?.name">Damages when attacked </h1>
-  </div>
- <app-pokemon-damage
-  [pokemonDamages]="typeDamages"
-  [pokemon] = "pokemon">
- </app-pokemon-damage>
-
- 
-
-  
- 
+<div class="Damages">
+  <h1 [class]="'bg-' + pokemon!.types[0]?.type?.name">Damages when attacked</h1>
+</div>
+<app-pokemon-damage [pokemonDamages]="typeDamages" [pokemon]="pokemon">
+</app-pokemon-damage>

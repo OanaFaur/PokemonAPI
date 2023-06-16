@@ -81,7 +81,7 @@
       </div>
     </div>
     <button type="submit" (click)="addNewProduct()"
-      [disabled]="pokemonProduct?.invalid || temporaryPokemonProduct.length>=3">Add new product</button>"
+      [disabled]="pokemonProduct?.invalid || temporaryPokemonProduct.length>=5">Add new product</button>"
 
     <button type="submit" (click)="onSubmit()" [disabled]="temporaryPokemonProduct.length==0">Submit</button>
   </form>
