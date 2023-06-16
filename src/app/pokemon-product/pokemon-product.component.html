@@ -1,0 +1,88 @@
+<div class="pokeProduct">
+  <form [formGroup]="pokemonProduct" class="common-form">
+    <div class="column">
+      <div class="form-group">
+        <label for="name">Item Name:</label>
+        <input type="text" id="name" formControlName="name" class="form-input">
+        <div *ngIf="pokemonProduct?.controls['name'].invalid && pokemonProduct?.controls['name'].touched">
+          Item name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select id="category" class="form-control" formControlName="category" class="form-input">
+          <option value="">Category</option>
+          <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+        <div *ngIf="pokemonProduct?.controls['category'].invalid && pokemonProduct?.controls['category'].touched"
+          class="error">
+          Category
+        </div>
+      </div>
+
+    </div>
+    <div class="column">
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" formControlName="price" class="form-input">
+        <div *ngIf="pokemonProduct?.controls['price']?.invalid && pokemonProduct?.controls['price']?.touched">
+          Please enter a valid price.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="text" id="image" formControlName="image" class="form-input">
+        <div *ngIf="pokemonProduct?.controls['image'].invalid && pokemonProduct?.controls['image'].touched"
+          class="error">
+          <div *ngIf="pokemonProduct?.get('image').hasError('required')">Image is required</div>
+          <div *ngIf="pokemonProduct?.get('image').hasError('invalidImageUrl')">Image URL is invalid</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" id="description" formControlName="description" class="form-input">
+
+        <div
+          *ngIf="pokemonProduct?.controls['description']?.invalid && pokemonProduct?.controls['description']?.touched">
+          Please enter an item description.
+        </div>
+      </div>
+
+      <div class="phone">
+        <div class="form-group">
+          <div class="phoneNumber">
+            <label for="phoneNumber">Phone number.:</label>
+            <input type="number" id="phoneNumber" formControlName="phoneNumber" class="form-input">
+            <div
+              *ngIf="pokemonProduct?.controls['phoneNumber']?.invalid && pokemonProduct?.controls['phoneNumber']?.touched">
+              Phone number must have at least 10 digits
+            </div>
+            <div>
+            </div>
+          </div>
+          <div class="phoneType">
+            <label for="phoneTypes">Phone type</label>
+            <select id="phoneTypes" class="form-control" formControlName="phoneTypes" class="form-input">
+              <option value="">Select</option>
+              <option *ngFor="let type of phoneTypes" [value]="type">{{type}}</option>
+            </select>
+            <div
+              *ngIf="pokemonProduct?.controls['phoneTypes'].invalid && pokemonProduct?.controls['phoneTypes'].touched"
+              class="error">
+              Phone type is required
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" (click)="addNewProduct()"
+      [disabled]="pokemonProduct?.invalid || temporaryPokemonProduct.length>=3">Add new product</button>"
+
+    <button type="submit" (click)="onSubmit()" [disabled]="temporaryPokemonProduct.length==0">Submit</button>
+  </form>
+</div>
