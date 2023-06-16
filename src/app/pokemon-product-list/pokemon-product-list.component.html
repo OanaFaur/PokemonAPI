@@ -1,0 +1,10 @@
+<div class="poke-product-cards">
+    <div class="card" *ngFor="let pokemonProduct of products">
+        <div class="poke-card-content">
+            <div class="poke-product-image-container">
+                <img [src]="pokemonProduct.image" alt="pokemon" class="pokemon-image">
+            </div>
+            <h3 class="pokemon-name">{{pokemonProduct.name}}</h3>
+        </div>
+    </div>
+</div>

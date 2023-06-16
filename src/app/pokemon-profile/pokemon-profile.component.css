@@ -1,0 +1,29 @@
+.grid-container {
+    padding-left: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Two columns with equal width */
+    grid-gap: 1px; /* Spacing between columns and rows */
+  }
+  
+  .grid-container p {
+    margin: 0;
+    font-weight: bold;
+    padding-left: 50px;
+    margin-top: 10px;
+  }
+
+  .eggs .eggGroups{
+    display:inline-block;
+    margin-top: 10px;
+  }
+  
+  .abilities p {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .effort-values p{
+    display: inline-block;
+  }
+
+  

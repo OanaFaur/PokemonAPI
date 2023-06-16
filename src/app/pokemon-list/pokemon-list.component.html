@@ -1,0 +1,17 @@
+<div class="pokemon-cards">
+  <div class="card" *ngFor="let pokemon of getCurrentPagePokemons()">
+    <div class="pokemon-content">
+      <a [routerLink]="['/pokemons', pokemon.name]" class="pokemon-link">
+        <div class="pokemon-image-container">
+          <img [src]="pokemon.sprites.front_default" (error)="getFallbackImage($event)" class="pokemon-image">
+        </div>
+      </a>
+      <h3 class="pokemon-name">{{pokemon.name}}</h3>
+    </div>
+  </div>
+</div>
+
+<div class="pagination-buttons">
+  <button class="button" (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+  <button class="button" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+</div>

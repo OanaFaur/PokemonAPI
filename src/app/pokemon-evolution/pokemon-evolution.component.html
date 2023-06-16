@@ -1,0 +1,21 @@
+<div class="pokemon-evolution">
+  <div class="pokemon-image">
+    <img [src]="pokemon?.sprites.front_default" alt="Image">
+  </div>
+  <div class="green-arrow">
+    <img src="../assets/arrow-xxl.png" alt="Green arrow">
+  </div>
+  <div class="pokemon-image">
+    <ng-container *ngIf="pokemon?.name !== pokemonNextInChain?.name; else textBlock">
+      <img [src]="pokemonNextInChain?.sprites.front_default" alt="Image">
+    </ng-container>
+    <ng-template #textBlock>
+      <p class="evolution-description-text">{{pokemonNextInChain?.name}} is the last in its evolution chain</p>
+    </ng-template>
+  </div>
+</div>
+<div class="evolution-description">
+  <ng-container *ngIf="pokemon?.name !== pokemonNextInChain?.name">
+    <p class="description">{{pokemon?.name}} evolves into {{pokemonNextInChain?.name}}</p>
+  </ng-container>
+</div>

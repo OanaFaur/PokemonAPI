@@ -1,0 +1,48 @@
+.pokeProduct{
+    margin-top:70px;
+    position:relative;
+}
+
+.common-form{
+    display: flex;
+    width:300px;
+    margin:0;
+    padding-left:50px;
+}
+
+.form-input{
+    height: 35px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid rgb(108, 177, 237);
+    padding-left: 15px;
+    color: black
+}
+
+.column {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-left:50px;
+}
+.column .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone .form-group{
+    display:flex;
+    flex-direction: row;
+}
+
+.phone .form-group .phoneType{
+    padding-left:20px;
+} 
+
+.pokeProduct button{
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-top:200px;
+    padding-right: 100px;
+  }

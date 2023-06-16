@@ -1,0 +1,38 @@
+<div class="grid-container">
+    <div>
+      <p>Height:</p>
+      <p>Catch Rate:</p>
+      <p>Egg Groups:</p>
+      <p>Abilities:</p>
+    </div>
+  
+    <div>
+      <p>{{ pokemonProfile?.height/10 }}</p>
+      <p>{{ pokemonSpeciesProfile?.capture_rate }}</p>
+      <div class="eggs">
+        <p *ngFor="let eggGroup of pokemonSpeciesProfile?.egg_groups" class="eggGroups">{{ eggGroup.name }}</p>
+      </div>
+      <div class="abilities">
+        <p *ngFor="let ability of pokemonProfile?.abilities" >{{ ability.ability.name }}</p>
+      </div>
+    
+    </div>
+
+    <div>
+        <p>Weight:</p>
+        <p>Gender Ratio:</p>
+        <p>Hatch Steps:</p>
+        <p>Evs: </p>
+    </div>
+
+    <div>
+        <p>{{ pokemonProfile?.weight/10 }}</p>
+        <p>{{genderRatio}}</p>
+        <p>{{pokemonSpeciesProfile?.hatch_counter}}</p>
+        <div class="effort-values">
+          <p *ngFor="let evalue of effortValues">{{evalue.stat}}</p>
+        </div>
+    </div>
+    
+  </div>
+

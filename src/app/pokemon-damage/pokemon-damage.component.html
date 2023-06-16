@@ -1,0 +1,23 @@
+<div *ngIf="pokemon" class="container">
+  <div class="column">
+    <ng-container *ngFor="let damage of pokemonDamages; let i = index">
+      <p *ngIf="i < 5" [class]="'poketype bg-' + damage">
+        {{ damage }}
+      </p>
+    </ng-container>
+  </div>
+  <div class="column">
+    <ng-container *ngFor="let damage of pokemonDamages; let i = index">
+      <p *ngIf="i >= 5 && i < 10" [class]="'poketype bg-' + damage">
+        {{ damage }}
+      </p>
+    </ng-container>
+  </div>
+  <div class="column">
+    <ng-container *ngFor="let damage of pokemonDamages; let i = index">
+      <p *ngIf="i >= 10 && i < 15" [class]="'poketype bg-' + damage">
+        {{ damage }}
+      </p>
+    </ng-container>
+  </div>
+</div>

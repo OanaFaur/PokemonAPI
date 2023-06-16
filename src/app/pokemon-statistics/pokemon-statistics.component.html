@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="image">
+      <img [src]="pokemon.sprites.front_default" alt="Image">
+    </div>
+    <div class="chart">
+     <div *ngFor="let stat of pokemon?.stats" class="chart-bar">
+      <div class="bar-label">{{ stat.stat.name }}</div>
+      <div [class]="'bar-value bg-' + pokemon!.types[0].type.name" [style.max-width]="stat.base_stat + '%'">{{ stat.base_stat }}</div>
+     </div>
+    </div>
+  </div>
